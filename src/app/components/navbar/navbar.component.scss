@@ -1,0 +1,154 @@
+/* Checkbox oculto */
+#menu-toggle {
+  display: none;
+}
+
+nav {
+  background: repeating-linear-gradient(120deg, #00012b 25%, #00013d, #000142 65%, #00012b 105%);
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: fit-content;
+}
+
+nav .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 0;
+}
+
+/* Estilo UL horizontal */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem; 
+  border-bottom: 3px solid transparent;
+  padding-bottom: 0.3rem;
+  transition: color 0.4s ease, border-bottom-color 0.4s ease, transform 0.3s ease;
+  display: inline-block; /* para que transform funcione bien */
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #2369b9;
+  border-bottom-color: #2369b9;
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Menú hamburguesa oculto en escritorio */
+nav label {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  width: 25px;
+}
+
+nav label span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right: auto;
+    transform: none;
+    width: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    z-index: 1000;
+  }
+
+  nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  nav label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: transparent;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    z-index: 101;
+  }
+
+  nav label span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    width: 200px;
+    padding: 0;
+    margin-top: 0.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0 0 12px 12px;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    display: block;
+    color: white;
+  }
+
+  #menu-toggle:checked ~ label,
+  #menu-toggle:checked ~ ul {
+    background: rgba(0, 1, 43, 0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  #menu-toggle:checked ~ ul {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+  
+}

@@ -1,0 +1,124 @@
+.hero-section {
+  padding: 6rem 0;
+  color: #f0f4f8;
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+}
+
+.hero-section .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: nowrap;
+}
+
+
+.hero-content {
+  max-width: 600px;
+  flex: 1;
+}
+
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 350px;
+  height: 480px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  object-fit: cover;
+  box-shadow: 0 0 15px #2369b9;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.hero-section h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 6px #2369b9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-secondary, .btn-primary {
+  background-color: transparent;
+  color: #2369b9;
+  border: 2px solid #2369b9;
+  box-shadow: none;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  outline: none;
+  box-shadow: 0 4px 8px #2369b9;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .hero-section .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-content, .hero-image-container {
+    flex: none;
+    max-width: 100%;
+  }
+  .hero-content {
+    padding-left: 0;
+  }
+
+  .hero-image {
+    width: 240px;
+    height: 340px;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+  .hero-section h2 {
+    font-size: 1.5rem !important;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+}

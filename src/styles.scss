@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+@import "aos/dist/aos.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --primary-color: #5797ff;
+  --bg-dark: #0f172a;
+  --text-light: #e5e5e5;
+  --text-muted: #94a3b8;
+  --card-bg: #1e293b;
+  --radius: 16px;
+}
+
+body {
+  background: repeating-linear-gradient(120deg, #00012b 25%, #00013d, #000142 65%, #00012b 105%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+
+section {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1, h2, h5 {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
